@@ -1,5 +1,5 @@
 pipeline {
- // agent any { docker { image 'node:13.8'} }
+  // agent { docker { image 'node:13.8'} }
   environment {
    dockerHome = tool 'myDocker'
    Path = "dockerHome/bin:$PATH"
