@@ -4,14 +4,13 @@ pipeline {
   // agent { docker { image 'node:13.8'} }
   environment {
    dockerHome = tool 'myDocker'
-   mavenHome = tool 'myMaven'
    PATH = "$dockerHome/bin:$mavenHome/bin$PATH"
 
   }
  stages {
    stage ('Build') {
       steps  {
-        sh 'mvn --version'
+        sh 'mvn version'
         sh 'docker version'
         sh 'rm -rf app_server'
         sh 'git clone https://github.com/petejades/app_server.git'
