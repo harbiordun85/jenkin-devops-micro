@@ -11,7 +11,7 @@ pipeline {
  stages {
    stage ('Build') {
       steps  {
-         'mvn --version'
+        sh 'mvn --version'
         sh 'docker version'
         sh 'rm -rf app_server'
         sh 'git clone https://github.com/petejades/app_server.git'
